@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Detalle Película</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="(movie$ | async) as movie">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [value]="movie.Title"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Fecha</ion-label>
+          <ion-input [value]="movie.Released"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Idioma</ion-label>
+          <ion-input [value]="movie.Language"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Director</ion-label>
+          <ion-input [value]="movie.Director"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea rows="4" cols="20" [value]="movie.Plot"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

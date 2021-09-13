@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Listado Películas</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="onSearch($event)" (ionClear)="onClear($event)" placeholder="Buscar película">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let movie of movies | async" [routerLink]="'/movie/' + movie.imdbID">
+      <ion-label>{{ movie.Title }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
